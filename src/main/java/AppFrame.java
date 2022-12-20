@@ -27,8 +27,13 @@ public class AppFrame extends JFrame{
         inputField.setBounds(15,10,240,30);
 
         JButton applyButton = new JButton("Apply");
-        int buttonWidth = (inputField.getWidth() - 20)/2;
-        applyButton.setBounds(inputField.getX() + 250,inputField.getY(),buttonWidth,29);
+        int buttonWidth = (inputField.getWidth() - 20) / 2;
+        applyButton.setBounds(
+                inputField.getX() + 250,
+                inputField.getY(),
+                buttonWidth,
+                29
+        );
         applyButton.setFocusPainted(false);
 
         outputArea = new JTextArea();
@@ -37,7 +42,12 @@ public class AppFrame extends JFrame{
         outputArea.setFont(new Font(Font.MONOSPACED, Font.BOLD, 12));
 
         JScrollPane scrollPane = new JScrollPane(outputArea);
-        scrollPane.setBounds(inputField.getX(), inputField.getY() + 55,WIDTH - 40,300);
+        scrollPane.setBounds(
+                inputField.getX(),
+                inputField.getY() + 55,
+                WIDTH - 40,
+                300
+        );
 
         applyButton.addActionListener(e-> {
 
@@ -46,8 +56,8 @@ public class AppFrame extends JFrame{
             if (command.isEmpty()){
                 JOptionPane.showMessageDialog(null,"The command field is empty");
             } else {
-                outputArea.append(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")) + ": "
-                        + command + "\n");
+                outputArea.append(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"))
+                        + ": " + command + "\n");
 
                 if (commandHandler.exists(command)){
                     commandHandler.getCommand(command).performAction(outputArea);
