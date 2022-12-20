@@ -60,6 +60,7 @@ public class AppFrame extends JFrame{
             }
         });
 
+        getRootPane().setDefaultButton(applyButton);
         add(inputField);
         add(applyButton);
         add(scrollPane);
