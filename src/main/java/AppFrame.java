@@ -1,13 +1,19 @@
 import commands.*;
 
-import javax.swing.*;
-import javax.swing.border.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JOptionPane;
+import javax.swing.border.BevelBorder;
+import javax.swing.BorderFactory;
+import java.awt.Font;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-public class AppFrame extends JFrame{
+public class AppFrame extends JFrame {
     private final int WIDTH = 400;
     private final int HEIGHT = 415;
     private JTextArea outputArea;
