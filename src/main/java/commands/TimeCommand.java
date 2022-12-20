@@ -1,6 +1,6 @@
 package commands;
 
-import javax.swing.*;
+import javax.swing.JTextArea;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 

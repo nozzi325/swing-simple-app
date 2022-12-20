@@ -1,6 +1,6 @@
 package commands;
 
-import javax.swing.*;
+import javax.swing.JTextArea;
 
 public class CleanCommand implements Command {
     @Override
