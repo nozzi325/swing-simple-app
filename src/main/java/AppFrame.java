@@ -14,8 +14,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class AppFrame extends JFrame {
-    private final int WIDTH = 400;
-    private final int HEIGHT = 415;
+    private static final int WIDTH = 400;
+    private static final int HEIGHT = 415;
     private JTextArea outputArea;
     private JTextField inputField;
     private CommandHandler commandHandler;
