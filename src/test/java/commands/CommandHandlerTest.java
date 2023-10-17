@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CommandHandlerTest {
-    CommandHandler commandHandler;
+    private CommandHandler commandHandler;
 
     @BeforeEach
     void setUp() {
@@ -13,50 +13,50 @@ class CommandHandlerTest {
     }
 
     @Test
-    void exists_OK() {
+    void testExistsForExistingCommand() {
         // given
         String commandName = "clean";
 
         // when
         boolean result = commandHandler.exists(commandName);
 
-        // verify
+        // then
         Assertions.assertTrue(result);
     }
 
     @Test
-    void exists_False_WhenCommandDoesNotExist() {
+    void testExistsForNonExistentCommand() {
         // given
         String commandName = "incorrect_command";
 
         // when
         boolean result = commandHandler.exists(commandName);
 
-        // verify
+        // then
         Assertions.assertFalse(result);
     }
 
     @Test
-    void getCommand_OK() {
+    void testGetCommandForExistingCommand() {
         // given
         String commandName = "clean";
 
         // when
         Command command = commandHandler.getCommand(commandName);
 
-        // verify
+        // then
         Assertions.assertNotNull(command);
     }
 
     @Test
-    void getCommand_Null_WhenCommandDoesNotExist() {
+    void testGetCommandForNonExistentCommand() {
         // given
         String commandName = "incorrect_command";
 
         // when
         Command command = commandHandler.getCommand(commandName);
 
-        // verify
+        // then
         Assertions.assertNull(command);
     }
 }

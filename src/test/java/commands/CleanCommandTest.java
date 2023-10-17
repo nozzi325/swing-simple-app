@@ -22,6 +22,9 @@ class CleanCommandTest {
         jTextArea.append("str1");
         jTextArea.append("str2");
 
+        // Additional assertion to check that JTextArea is not empty initially
+        Assertions.assertFalse(jTextArea.getText().isEmpty());
+
         // when
         command.performAction(jTextArea);
 

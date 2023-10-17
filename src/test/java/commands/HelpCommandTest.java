@@ -23,10 +23,11 @@ class HelpCommandTest {
         command.performAction(jTextArea);
 
         // verify
-        Assertions.assertFalse(jTextArea.getText().isEmpty());
-        Assertions.assertTrue(jTextArea.getText().contains("help"));
-        Assertions.assertTrue(jTextArea.getText().contains("date"));
-        Assertions.assertTrue(jTextArea.getText().contains("clean"));
-        Assertions.assertTrue(jTextArea.getText().contains("time"));
+        String text = jTextArea.getText();
+        Assertions.assertFalse(text.isEmpty());
+        Assertions.assertTrue(text.contains("1) help - get list of all available commands"));
+        Assertions.assertTrue(text.contains("2) time - get current time"));
+        Assertions.assertTrue(text.contains("3) date - get current date"));
+        Assertions.assertTrue(text.contains("4) clean - clear output area"));
     }
 }

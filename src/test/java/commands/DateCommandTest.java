@@ -27,6 +27,6 @@ class DateCommandTest {
 
         // verify
         Assertions.assertFalse(jTextArea.getText().isEmpty());
-        Assertions.assertEquals(expectedValue,jTextArea.getText());
+        Assertions.assertEquals(expectedValue, jTextArea.getText());
     }
 }

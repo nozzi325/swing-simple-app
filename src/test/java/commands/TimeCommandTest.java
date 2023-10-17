@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.*;
+import javax.swing.JTextArea;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
