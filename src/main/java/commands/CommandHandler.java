@@ -1,24 +1,31 @@
 package commands;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 public class CommandHandler {
-    private Map<String, Command> commands;
+    private Map<String, Command> commands = new HashMap<>();
 
-    public CommandHandler(){
-        commands = new HashMap<>();
-        commands.put("clean", new CleanCommand());
-        commands.put("date", new DateCommand());
-        commands.put("time", new TimeCommand());
-        commands.put("help", new HelpCommand());
+    public CommandHandler() {
+        initializeCommands();
     }
 
-    public boolean exists(String name){
+    private void initializeCommands() {
+        addCommand("clean", new CleanCommand());
+        addCommand("date", new DateCommand());
+        addCommand("time", new TimeCommand());
+        addCommand("help", new HelpCommand());
+    }
+
+    public void addCommand(String name, Command command) {
+        commands.put(name, command);
+    }
+
+    public boolean exists(String name) {
         return commands.containsKey(name);
     }
 
-    public Command getCommand(String name){
+    public Command getCommand(String name) {
         return commands.get(name);
     }
 }
